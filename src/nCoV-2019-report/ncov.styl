@@ -1,0 +1,70 @@
+.page-container
+  width 1280px
+  height 720px
+  margin 0 auto
+  padding: 10px
+  background #0e3462
+  color #fff
+  .logo
+    height 40px
+    font-size 40px
+    padding-left 10px
+  .page-wrap-1
+    display flex
+    flex-direction row
+    justify-content space-between
+    height 450px
+    .ant-carousel
+      width 49%
+      img
+        height 450px
+    .report-detail
+      width 49%
+      padding 3% 1%
+      border 2px solid black
+      border-radius 10px
+      h3
+        color inherit
+        padding-left 6%
+        position relative
+        &:not(.des-title):before
+          content '|'
+          width 2px
+          height 100%
+          font-weight bold
+          margin-right 10px
+          color #f7c577
+      ul
+        margin 0 0 30px 0
+        padding 0
+        width 33.3%
+        list-style none
+        text-align center
+        display inline-block
+        position relative
+        font-size 16px
+        li
+          line-height 1.5
+          &:nth-child(1), &:nth-child(3)
+            color: #ccc
+            font-size 18px
+          &:nth-child(2)
+            font-size 38px
+        &:not(:nth-child(4)):not(:nth-child(8)):after
+          width 2px
+          height 60%
+          content ''
+          position absolute
+          top 20%
+          right 0
+          background-color #ccc
+          border-radius 2px
+  .page-wrap-2
+    padding 10px
+    text-align center
+    button
+      height 60px
+      width 200px
+      margin 10px 55px
+      font-size 30px
+      border-radius 5px
