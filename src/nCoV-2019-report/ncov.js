@@ -1,29 +1,28 @@
-/*
- * @Author: 简小飞
- * @Date: 2021-02-05 15:15:00
- * @LastEditTime: 2021-02-06 02:21:40
- * @FilePath: /react-iptv-web/src/nCoV-2019-report/ncov.js
- */
 import React from "react";
-import { Carousel, Button } from "antd";
-import { VideoCameraOutlined, HighlightOutlined } from "@ant-design/icons";
-import wordImg from "./assets/img/world.png";
-import chinaImg from "./assets/img/china.png";
+import { Carousel, Button, Image } from "antd";
+import { Link } from "react-router-dom";
+import { BarChartOutlined, HighlightOutlined } from "@ant-design/icons";
+import wordImg from "./assets/img/world.jpg";
+import chinaImg from "./assets/img/china.jpg";
 import "antd/dist/antd.css";
-import "./ncov.styl";
+import "./stylus/ncov.styl";
 
 class NcOv extends React.Component {
+  constructor() {
+    super();
+    this.time = new Date().toLocaleDateString();
+  }
   render() {
     return (
       <div className="page-container">
         <p className="logo">ncov-2019</p>
         <div className="page-wrap-1">
-          <Carousel autoplay>
+          <Carousel autoplay effect="fade" dots={{ className: "dots" }}>
             <div>
-              <img src={chinaImg} alt="" />
+              <Image src={chinaImg} />
             </div>
             <div>
-              <img src={wordImg} alt="" />
+              <Image src={wordImg} />
             </div>
           </Carousel>
           <section className="report-detail">
@@ -77,39 +76,19 @@ class NcOv extends React.Component {
           </section>
         </div>
         <div className="page-wrap-2">
-          <Button size="large">
-            <VideoCameraOutlined />
-            疫情实播
+          <Button icon={<HighlightOutlined />}>
+            <Link to="timePlay">疫情实播</Link>
           </Button>
-          <Button size="large">
-            <HighlightOutlined />
-            疫情实播
+          <Button icon={<BarChartOutlined />}>
+            <Link to="dataStatistics">数据统计</Link>
           </Button>
-          <Button size="large">
-            <HighlightOutlined />
-            疫情实播
-          </Button>
-          <Button size="large">
-            <HighlightOutlined />
-            疫情实播
-          </Button>
+          <Button icon={<HighlightOutlined />}>核酸检测疫苗接种</Button>
+          <Button icon={<HighlightOutlined />}>预防及治疗</Button>
           <br />
-          <Button size="large">
-            <HighlightOutlined />
-            疫情实播
-          </Button>
-          <Button size="large">
-            <HighlightOutlined />
-            疫情实播
-          </Button>
-          <Button size="large">
-            <HighlightOutlined />
-            疫情实播
-          </Button>
-          <Button size="large">
-            <HighlightOutlined />
-            疫情实播
-          </Button>
+          <Button icon={<HighlightOutlined />}>疑是感染自测</Button>
+          <Button icon={<HighlightOutlined />}>隔离政策与小区信息</Button>
+          <Button icon={<HighlightOutlined />}>在线咨询及服务</Button>
+          <Button icon={<HighlightOutlined />}>专家图文问诊</Button>
         </div>
       </div>
     );

@@ -2,9 +2,7 @@
   width 1280px
   height 720px
   margin 0 auto
-  padding: 10px
-  background #0e3462
-  color #fff
+  padding 10px
   .logo
     height 40px
     font-size 40px
@@ -16,8 +14,13 @@
     height 450px
     .ant-carousel
       width 49%
+      .dots
+        li
+          button
+            background-color black
       img
         height 450px
+        width 100%
     .report-detail
       width 49%
       padding 3% 1%
@@ -46,10 +49,10 @@
         li
           line-height 1.5
           &:nth-child(1), &:nth-child(3)
-            color: #ccc
+            color #ccc
             font-size 18px
           &:nth-child(2)
-            font-size 38px
+            font-size 32px
         &:not(:nth-child(4)):not(:nth-child(8)):after
           width 2px
           height 60%
@@ -59,12 +62,14 @@
           right 0
           background-color #ccc
           border-radius 2px
+          // h-shadow v-shadow blur spread color inset
+          box-shadow 1px 1px 10px black
   .page-wrap-2
     padding 10px
     text-align center
     button
       height 60px
-      width 200px
-      margin 10px 55px
-      font-size 30px
+      width 210px
+      margin 10px 50px
+      font-size 18px
       border-radius 5px
